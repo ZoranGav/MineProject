@@ -99,6 +99,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.directoryLocationBtn);
             this.Controls.Add(this.directoryLocationBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "String Searcher";
             this.ResumeLayout(false);

@@ -62,7 +62,7 @@ namespace FileSearch
                         using (StreamReader sR = File.OpenText(path))
                         {
                             string txtFile = sR.ReadToEnd();
-                            string[] intoArray = txtFile.Split(' ');
+                            string[] intoArray = txtFile.Split(' ', ',');
 
                             for (int i = 0; i < intoArray.Length; i++)
                             {
@@ -70,10 +70,11 @@ namespace FileSearch
                                 if (intoArray[i] == word)
                                 {
 
-                                    numbOfRep++;
+                                    int wordCount = numbOfRep++;
+                                    int nesto = wordCount;
 
-                                    itmesListBox.Items.Add(path + " " + numbOfRep);
                                 
+                                    itmesListBox.Items.Add(path + " " + nesto);
                                 }
                             }
                             sR.Close();
@@ -86,6 +87,9 @@ namespace FileSearch
             }
         }
 
-        
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
