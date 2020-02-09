@@ -34,6 +34,7 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
             this.itmesListBox = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // directoryLocationBox
@@ -85,14 +86,23 @@
             this.itmesListBox.FormattingEnabled = true;
             this.itmesListBox.Location = new System.Drawing.Point(15, 42);
             this.itmesListBox.Name = "itmesListBox";
-            this.itmesListBox.Size = new System.Drawing.Size(636, 251);
+            this.itmesListBox.Size = new System.Drawing.Size(636, 238);
             this.itmesListBox.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 287);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 338);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.itmesListBox);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.searchTextBox);
@@ -116,6 +126,7 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.ListBox itmesListBox;
+        private System.Windows.Forms.Label label2;
     }
 }
 

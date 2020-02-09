@@ -82,9 +82,10 @@ namespace FileSearch
                                 itmesListBox.Items.Add(Path.GetFileName(path) + ", " + "number of repetitions: " + numbOfRep);
                                 numbOfRep -= numbOfRep;
                             }
-                            
 
 
+                            int numbOfFiles = files.Length;
+                            label2.Text = "Number of files checked: " + numbOfFiles; 
                         }
                             
                     }
