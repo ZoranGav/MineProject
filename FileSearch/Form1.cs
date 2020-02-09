@@ -69,24 +69,30 @@ namespace FileSearch
 
                                 if (intoArray[i] == word)
                                 {
-
-                                    int wordCount = numbOfRep++;
-                                    int nesto = wordCount;
-
-                                
-                                    itmesListBox.Items.Add(path + " " + nesto);
+                                    numbOfRep++;
                                 }
+                                
+                                
+                                
                             }
-                            sR.Close();
 
+                            sR.Close();
+                            if (numbOfRep != 0)
+                            {
+                                itmesListBox.Items.Add(Path.GetFileName(path) + ", " + "number of repetitions: " + numbOfRep);
+                                numbOfRep -= numbOfRep;
+                            }
                             
-                            
+
+
                         }
+                            
                     }
                 }
             }
         }
 
+        
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
 
