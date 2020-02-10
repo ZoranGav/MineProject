@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace FileSearch
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
+        this.itmesListBox.MouseDoubleClick += new MouseEventHandler(itmesListBox_MouseDoubleClick);
         }
 
         public void directoryLocationBtn_Click(object sender, EventArgs e)
@@ -29,6 +32,7 @@ namespace FileSearch
             
 
          }
+        
         private void searchBtn_Click(object sender, EventArgs e)
         {
             itmesListBox.Items.Clear();
@@ -38,6 +42,7 @@ namespace FileSearch
             string dirLocation = directoryLocationBox.Text;
 
             int numbOfRep = 0;
+            
 
             if (directoryLocationBox.Text == "")
             {
@@ -79,7 +84,9 @@ namespace FileSearch
                             sR.Close();
                             if (numbOfRep != 0)
                             {
-                                itmesListBox.Items.Add(Path.GetFileName(path) + ", " + "number of repetitions: " + numbOfRep);
+                                string putanja = Path.GetFileName(path);
+                                itmesListBox.Items.Add(putanja + ", " + "number of repetitions: " + numbOfRep);
+                                 
                                 numbOfRep -= numbOfRep;
                             }
 
@@ -93,9 +100,23 @@ namespace FileSearch
             }
         }
 
-        
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
+
+        public void itmesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+
         {
+
+            int index = this.itmesListBox.IndexFromPoint(e.Location);
+
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+
+            {
+                string fileName = itmesListBox.SelectedItem.ToString();
+                string pathString = directoryLocationBox.Text +"/"+ fileName.Split(',')[0];
+                Process.Start("notepad.exe", pathString);
+
+                //do your stuff here
+
+            }
 
         }
     }
