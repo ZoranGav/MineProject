@@ -43,6 +43,7 @@ namespace FileSearch
 
             int numbOfRep = 0;
             
+            
 
             if (directoryLocationBox.Text == "")
             {
@@ -59,7 +60,7 @@ namespace FileSearch
                 }
                 else
                 {
-                    string[] files = Directory.GetFiles(dirLocation, "*.txt", SearchOption.AllDirectories);
+                    string[] files = Directory.GetFiles(dirLocation, "*", SearchOption.AllDirectories);
 
                     foreach (string path in files)
                     {
